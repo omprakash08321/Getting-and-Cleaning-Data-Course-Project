@@ -40,6 +40,7 @@ ProcessedData<-data.table(ProcessedData)
 Tidy_data <- ProcessedData[, lapply(.SD, mean), by = 'SubjectID,Activity']
 dim(Tidy_data) #print dimensions of tidy data
 
-write.table(Tidy_data, file = "Tidy_data_text.txt", row.names = FALSE)
-#First 20 rows and 6 columns in Tidy_data
-head(Tidy_data[order(SubjectID)][,c(1:5), with = FALSE],20) 
+write.table(Tidy_data, file = "Tidy_data.txt", row.names = FALSE)
+#First 10 rows and 6 columns in Tidy_data
+head(Tidy_data[order(SubjectID)][,c(1:5), with = FALSE],10) 
+
